@@ -1,10 +1,14 @@
 package uni.miskolc.ips.ilona.navigation.persist;
 
+import java.io.File;
+import java.util.Collection;
+import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
 import org.semanticweb.owlapi.model.OWLOntology;
 
+import uni.miskolc.ips.ilona.measurement.model.position.Zone;
 import uni.miskolc.ips.ilona.navigation.model.ZoneMap;
 
 
@@ -45,6 +49,6 @@ public interface OntologyDAO {
 	public ZoneMap createGraphWithoutRestrictions();
 	public ZoneMap createGraph(Set<GatewayRestriction> gatewayRestrictions, Set<ZoneRestriction> zoneRestrictions);
 	public UUID getResidenceId(String person) throws NoSuchPersonException;
-	
+	public File addZones(File ontologyFile, Collection<Zone> zones);
 
 }

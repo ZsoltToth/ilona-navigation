@@ -1,24 +1,36 @@
 package uni.miskolc.ips.ilona.navigation.persist.ontology;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
 import org.semanticweb.HermiT.Reasoner;
 import org.semanticweb.owlapi.apibinding.OWLManager;
+import org.semanticweb.owlapi.formats.OWLXMLDocumentFormat;
+import org.semanticweb.owlapi.io.FileDocumentTarget;
+import org.semanticweb.owlapi.model.AddAxiom;
+import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClass;
+import org.semanticweb.owlapi.model.OWLClassAssertionAxiom;
 import org.semanticweb.owlapi.model.OWLDataFactory;
+import org.semanticweb.owlapi.model.OWLDataPropertyAssertionAxiom;
 import org.semanticweb.owlapi.model.OWLLiteral;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
+import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 import org.semanticweb.owlapi.reasoner.InferenceType;
 import org.semanticweb.owlapi.reasoner.Node;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
+import org.semanticweb.owlapi.util.OWLEntityRemover;
 import org.semanticweb.owlapi.util.SimpleShortFormProvider;
 
+import uni.miskolc.ips.ilona.measurement.model.position.Zone;
 import uni.miskolc.ips.ilona.navigation.model.Gateway;
 import uni.miskolc.ips.ilona.navigation.persist.NoSuchPersonException;
 import uni.miskolc.ips.ilona.navigation.model.ZoneMap;
@@ -315,5 +327,59 @@ public class OntologyDAOImpl implements OntologyDAO {
 			throw new NoSuchPersonException();
 		}
 		return result;
+	}
+	
+	/**
+	 * A method which loads given zones into an empty ontology file
+	 * @param ontologyFile the file into which the ontology should be loaded
+	 * @param zones A collection of the zones which the method will upload to the file
+	 * @return the ontology file with the within it 
+	 */
+	
+	public File addZones(File ontologyFile, Collection<Zone> zones){
+		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
+		OWLDataFactory factory = manager.getOWLDataFactory();
+		OWLOntology ontology;
+		try {
+			ontology = readOntologyFromFile(ontologyFile);
+		
+		List<AddAxiom> axioms = new ArrayList<AddAxiom>();
+		
+		OWLEntityRemover remover = new OWLEntityRemover(ontology);
+		for (OWLNamedIndividual individual : ontology.getIndividualsInSignature()) {
+			remover.visit(individual);
+		}
+		manager.applyChanges(remover.getChanges());
+		
+		for(Zone zone : zones){
+			String zoneName = zone.getName();
+			zoneName=zoneName.trim();
+			zoneName=zoneName.replaceAll(" ", "_");
+			zoneName=zoneName.replaceAll("#", "");
+		//Upload the queried data of the zone into the ontology
+		OWLNamedIndividual zoneIndividual = factory
+				.getOWLNamedIndividual(IRI.create(IlonaIRIs.PREFIX + zoneName));
+		OWLClassAssertionAxiom classAssertion = factory
+				.getOWLClassAssertionAxiom(factory.getOWLClass(IlonaIRIs.ZONE), zoneIndividual);
+		axioms.add(new AddAxiom(ontology, classAssertion));
+		OWLDataPropertyAssertionAxiom nameAssertion = factory.getOWLDataPropertyAssertionAxiom(
+				factory.getOWLDataProperty(IlonaIRIs.NAME), zoneIndividual, zone.getName());
+		axioms.add(new AddAxiom(ontology, nameAssertion));
+		OWLDataPropertyAssertionAxiom iDAssertion = factory.getOWLDataPropertyAssertionAxiom(
+				factory.getOWLDataProperty(IlonaIRIs.ID), zoneIndividual, zone.getId().toString());
+		axioms.add(new AddAxiom(ontology, iDAssertion));
+		}
+		
+		manager.applyChanges(axioms);
+		//try to save the ontology and catch the possible exception
+		try {
+			manager.saveOntology(ontology, new OWLXMLDocumentFormat(), new FileDocumentTarget(ontologyFile));
+		} catch (OWLOntologyStorageException e) {
+			e.printStackTrace();
+		}
+		} catch (OWLOntologyCreationException e) {
+			e.printStackTrace();
+		}
+		return ontologyFile;
 	}
 }
