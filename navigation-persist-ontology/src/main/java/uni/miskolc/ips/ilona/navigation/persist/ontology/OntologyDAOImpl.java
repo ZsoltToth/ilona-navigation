@@ -354,8 +354,10 @@ public class OntologyDAOImpl implements OntologyDAO {
 		for(Zone zone : zones){
 			String zoneName = zone.getName();
 			zoneName=zoneName.trim();
-			zoneName=zoneName.replaceAll(" ", "_");
-			zoneName=zoneName.replaceAll("#", "");
+			if(zoneName.contains(" ")){
+			zoneName=zoneName.replaceAll(" ", "_");}
+			if(zoneName.contains("#")){
+			zoneName=zoneName.replaceAll("#", "");}
 		//Upload the queried data of the zone into the ontology
 		OWLNamedIndividual zoneIndividual = factory
 				.getOWLNamedIndividual(IRI.create(IlonaIRIs.PREFIX + zoneName));

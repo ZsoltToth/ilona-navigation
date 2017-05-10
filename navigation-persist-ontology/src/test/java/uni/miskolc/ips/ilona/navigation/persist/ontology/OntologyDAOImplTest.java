@@ -4,11 +4,12 @@ package uni.miskolc.ips.ilona.navigation.persist.ontology;
 import org.junit.Before;
 import org.junit.Test;
 import org.semanticweb.owlapi.apibinding.OWLManager;
+import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 
-
+import uni.miskolc.ips.ilona.measurement.model.position.Zone;
 import uni.miskolc.ips.ilona.navigation.model.Gateway;
 import uni.miskolc.ips.ilona.navigation.model.ZoneMap;
 import uni.miskolc.ips.ilona.navigation.persist.NoSuchPersonException;
@@ -19,7 +20,10 @@ import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.*;
 
 import java.io.File;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -257,6 +261,35 @@ public class OntologyDAOImplTest {
 	@Test(expected=NoSuchPersonException.class)
 	public void testResidenceIDWithoutActualResident(){
 		test.getResidenceId("Little Red Riding Hood");
+	}
+	
+	@Test
+	public void testAddZones() throws OWLOntologyCreationException{
+		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
+		
+		List<String> zoneIDs = new ArrayList<String>();
+		zoneIDs.add("07a25de0-a013-486d-9463-404a348e05ee");
+		zoneIDs.add("14fc835a-ee28-4b78-9c59-9ee0f759ce56");
+		zoneIDs.add("1501dc2f-55e3-44bd-8f15-8c26a8c7410d");
+		zoneIDs.add("9f71cbac-14eb-45ce-9e0f-b5757ad4cc5c");
+		zoneIDs.add("76f33f88-0568-4058-8b3e-4435f636bf88");
+		zoneIDs.add("18364962-7390-4b22-9dab-22283a01dbc3");
+		
+		Set<Zone> zones = new HashSet<Zone>();
+		for(int i=0;i<6;i++){
+		Zone zone=new Zone("zone"+i);
+		zone.setId(UUID.fromString(zoneIDs.get(i)));
+		zones.add(zone);
+		}
+		
+		
+		Set<String> actual =new HashSet<>(); 
+		Set<UUID> generated =	test.getAllZoneIDs(manager.loadOntologyFromOntologyDocument(test.addZones(new File("resources/ILONABASE.owl"), zones)));
+		for(UUID id : generated){
+			actual.add(id.toString());
+		}
+		assertThat(actual,containsInAnyOrder(zoneIDs.toArray()));
+		
 	}
 
 }

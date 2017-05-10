@@ -43,6 +43,7 @@ public class OntologyGenerationServiceImplTest {
 		EasyMock.expect(ontologyDAOMock.getBaseOntology())
 				.andReturn(manager.loadOntologyFromOntologyDocument(new File("src/resources/ILONABASE.owl")))
 				.anyTimes();
+		EasyMock.expect(ontologyDAOMock.addZones(EasyMock.anyObject(), EasyMock.anyObject())).andReturn(new File("src/resources/testOntology.owl"));
 		EasyMock.expect(zoneDAOMock.readZones()).andReturn(zones);
 		EasyMock.replay(zoneDAOMock);
 		EasyMock.replay(ontologyDAOMock);
