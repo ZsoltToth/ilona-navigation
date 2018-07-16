@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: uni.miskolc.ips.ilona:measurement-persist-mysql:0.1.2-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/uni/miskolc/ips/ilona/measurement-persist-mysql/0.1.2-SNAPSHOT/measurement-persist-mysql-0.1.2-20161014.064240-2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/uni/miskolc/ips/ilona/measurement-persist-mysql/0.1.2-SNAPSHOT/measurement-persist-mysql-0.1.2-20161014.064240-2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/uni/miskolc/ips/ilona/measurement-persist-mysql/0.1.2-SNAPSHOT/measurement-persist-mysql-0.1.2-20161014.064240-2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

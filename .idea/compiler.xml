@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="navigation-controller" />
+        <module name="navigation-model" />
+        <module name="navigation-persist" />
+        <module name="navigation-persist-ontology" />
+        <module name="navigation-service" />
+        <module name="navigation-service-impl" />
+        <module name="navigation-util" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="navigation" target="1.5" />
+      <module name="navigation-controller" target="1.8" />
+      <module name="navigation-model" target="1.8" />
+      <module name="navigation-persist" target="1.8" />
+      <module name="navigation-persist-ontology" target="1.8" />
+      <module name="navigation-service" target="1.7" />
+      <module name="navigation-service-impl" target="1.8" />
+      <module name="navigation-util" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
