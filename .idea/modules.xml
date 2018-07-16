@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/navigation.iml" filepath="$PROJECT_DIR$/navigation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/navigation-controller/navigation-controller.iml" filepath="$PROJECT_DIR$/navigation-controller/navigation-controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/navigation-model/navigation-model.iml" filepath="$PROJECT_DIR$/navigation-model/navigation-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/navigation-persist/navigation-persist.iml" filepath="$PROJECT_DIR$/navigation-persist/navigation-persist.iml" />
+      <module fileurl="file://$PROJECT_DIR$/navigation-persist-ontology/navigation-persist-ontology.iml" filepath="$PROJECT_DIR$/navigation-persist-ontology/navigation-persist-ontology.iml" />
+      <module fileurl="file://$PROJECT_DIR$/navigation-service/navigation-service.iml" filepath="$PROJECT_DIR$/navigation-service/navigation-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/navigation-service-impl/navigation-service-impl.iml" filepath="$PROJECT_DIR$/navigation-service-impl/navigation-service-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/navigation-util/navigation-util.iml" filepath="$PROJECT_DIR$/navigation-util/navigation-util.iml" />
+    </modules>
+  </component>
+</project>
