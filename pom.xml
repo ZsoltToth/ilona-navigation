@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>uni.miskolc.ips.ilona.navigation</groupId>
 	<artifactId>navigation</artifactId>
-	<version>2.0.3-SNAPSHOT</version>
+	<version>2.0.5-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>ILONA - Navigation</name>
 	<description>	</description>
@@ -22,6 +22,7 @@
 		<module>controller</module>
 		<module>service</module>
 		<module>persist.ontology</module>
+		<module>web</module>
 	</modules>
 
 	<dependencies>

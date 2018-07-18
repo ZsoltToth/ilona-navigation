@@ -1,4 +1,4 @@
-package uni.miskolc.ips.ilona.navigation.controller;
+package uni.miskolc.ips.ilona.navigation.controller.dto;
 
 import static org.junit.Assert.*;
 

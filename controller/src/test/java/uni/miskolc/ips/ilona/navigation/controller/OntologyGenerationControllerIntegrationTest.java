@@ -21,6 +21,7 @@ import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
 import com.mysql.jdbc.Driver;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import uni.miskolc.ips.ilona.measurement.persist.ZoneDAO;
 import uni.miskolc.ips.ilona.measurement.persist.mysql.MySQLZoneDAO;
 import uni.miskolc.ips.ilona.navigation.persist.OntologyDAO;
@@ -44,6 +45,7 @@ public class OntologyGenerationControllerIntegrationTest {
 	protected static String USER;
 	protected static String PASSWORD;
 
+	@Autowired
 	private OntologyGenerationService ontologyGenerationService;
 	private File testFile;
 	private OntologyGenerationController test;
@@ -128,7 +130,7 @@ public class OntologyGenerationControllerIntegrationTest {
 		}
 
 		ontologyGenerationService = new OntologyGenerationServiceImpl(ontologyDAO, dao);
-		test=new OntologyGenerationController(ontologyGenerationService);
+		//test=new OntologyGenerationController(ontologyGenerationService);
 		
 	}
 

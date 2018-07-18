@@ -8,10 +8,12 @@ import java.io.IOException;
 import org.apache.commons.io.FileUtils;
 import org.easymock.EasyMock;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.mock.web.MockHttpServletResponse;
 
 import uni.miskolc.ips.ilona.navigation.service.OntologyGenerationService;
+
 
 public class OntologyGenerationControllerTest {
 
@@ -23,7 +25,7 @@ public class OntologyGenerationControllerTest {
 	@Before
 	public void setUp() throws Exception {
 		serviceMock = EasyMock.mock(OntologyGenerationService.class);
-		test = new OntologyGenerationController(serviceMock);
+		//test = new OntologyGenerationController(serviceMock);
 		testFile = new File("src/resources/TestFile");
 		response=new MockHttpServletResponse();
 		

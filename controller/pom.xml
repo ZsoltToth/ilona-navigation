@@ -6,10 +6,10 @@
 	<parent>
 		<groupId>uni.miskolc.ips.ilona.navigation</groupId>
 		<artifactId>navigation</artifactId>
-		<version>2.0.3-SNAPSHOT</version>
+		<version>2.0.5-SNAPSHOT</version>
 	</parent>
 	<artifactId>controller</artifactId>
-	<version>2.0.3-SNAPSHOT</version>
+	<version>2.0.5-SNAPSHOT</version>
 	<name>controller</name>
 	<url>http://maven.apache.org</url>
 	<properties>
@@ -27,7 +27,7 @@
 		<dependency>
 			<groupId>uni.miskolc.ips.ilona.navigation</groupId>
 			<artifactId>service</artifactId>
-			<version>2.0.3-SNAPSHOT</version>
+			<version>2.0.5-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -89,7 +89,7 @@
 		<dependency>
 			<groupId>uni.miskolc.ips.ilona.navigation</groupId>
 			<artifactId>service.impl</artifactId>
-			<version>2.0.3-SNAPSHOT</version>
+			<version>2.0.5-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
