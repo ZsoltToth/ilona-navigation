@@ -29,7 +29,7 @@ public class WayFindingControllerTest {
     @Before
     public void setUp() throws Exception {
         serviceMock = EasyMock.createMock(WayfindingService.class);
-        //test = new WayfindingController(serviceMock);
+        test = new WayfindingController(serviceMock);
 
         from = new Zone("start");
         to = new Zone("finish");
