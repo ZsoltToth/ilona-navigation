@@ -18,8 +18,13 @@ import java.net.URLEncoder;
 @Controller
 public class OntologyGenerationController {
 
-    @Autowired
+    //@Autowired
     private OntologyGenerationService ontologyGenerationService;
+
+    @Autowired
+    public OntologyGenerationController(OntologyGenerationService ontologyGenerationService) {
+        this.ontologyGenerationService = ontologyGenerationService;
+    }
 /*
 	public OntologyGenerationController(OntologyGenerationService ontologyGenerationService) {
 		super();

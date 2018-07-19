@@ -18,8 +18,12 @@ import java.util.List;
 
 @Controller
 public class WayfindingController {
-    @Autowired
     private WayfindingService wayfindingService;
+
+    @Autowired
+    public WayfindingController(WayfindingService wayfindingService) {
+        this.wayfindingService = wayfindingService;
+    }
 
     @RequestMapping(value = "/navigation/ontology/getpath", method = RequestMethod.POST, consumes = "application/json")
     public @ResponseBody
