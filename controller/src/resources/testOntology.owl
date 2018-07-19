@@ -6,127 +6,116 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.semanticweb.org/dpkun/ontologies/2016/ILONA">
+    <Prefix name="" IRI="http://www.semanticweb.org/dpkun/ontologies/2016/ILONA#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Declaration>
-        <Class IRI="#Building"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Department"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Door"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Elevator"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Escalator"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Floor"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Function"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Gateway"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Organization"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PhysicalParameter"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PhysicalZoneGroup"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Resident"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Stairway"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#VirtualCrossing"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#VirtualParameter"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Zone"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#FromZone"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#FuncitonOf"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#HasResident"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#InBuilding"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#InZoneGroup"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#OnFloor"/>
+        <DataProperty IRI="#ID"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#PartOfOrganization"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#Residence"/>
+        <Class IRI="#PhysicalParameter"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#ToZone"/>
+        <NamedIndividual IRI="#test_Two"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasFunction"/>
+        <ObjectProperty IRI="#InZoneGroup"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#inZone"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#FromPicture"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#ID"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#KeyNeeded"/>
+        <ObjectProperty IRI="#HasResident"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#Name"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#FromZone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalZoneGroup"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Gateway"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Organization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Door"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Residence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Elevator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Floor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#test_One"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Resident"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#OneWay"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Function"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VirtualCrossing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Escalator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stairway"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#OnFloor"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#FromPicture"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ToZone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VirtualParameter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#inZone"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Department"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Zone"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFunction"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#KeyNeeded"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Building"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#ToPicture"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#zone2"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#zone3"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#zone0"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#zone1"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#zone4"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#zone5"/>
+        <ObjectProperty IRI="#InBuilding"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#Building"/>
@@ -218,88 +207,12 @@
     </DisjointClasses>
     <ClassAssertion>
         <Class IRI="#Zone"/>
-        <NamedIndividual IRI="#zone0"/>
+        <NamedIndividual IRI="#test_One"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Zone"/>
-        <NamedIndividual IRI="#zone1"/>
+        <NamedIndividual IRI="#test_Two"/>
     </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Zone"/>
-        <NamedIndividual IRI="#zone2"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Zone"/>
-        <NamedIndividual IRI="#zone3"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Zone"/>
-        <NamedIndividual IRI="#zone4"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Zone"/>
-        <NamedIndividual IRI="#zone5"/>
-    </ClassAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#ID"/>
-        <NamedIndividual IRI="#zone0"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">07a25de0-a013-486d-9463-404a348e05ee</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#Name"/>
-        <NamedIndividual IRI="#zone0"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">zone0</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#ID"/>
-        <NamedIndividual IRI="#zone1"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">14fc835a-ee28-4b78-9c59-9ee0f759ce56</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#Name"/>
-        <NamedIndividual IRI="#zone1"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">zone1</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#ID"/>
-        <NamedIndividual IRI="#zone2"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">1501dc2f-55e3-44bd-8f15-8c26a8c7410d</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#Name"/>
-        <NamedIndividual IRI="#zone2"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">zone2</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#ID"/>
-        <NamedIndividual IRI="#zone3"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">9f71cbac-14eb-45ce-9e0f-b5757ad4cc5c</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#Name"/>
-        <NamedIndividual IRI="#zone3"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">zone3</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#ID"/>
-        <NamedIndividual IRI="#zone4"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">76f33f88-0568-4058-8b3e-4435f636bf88</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#Name"/>
-        <NamedIndividual IRI="#zone4"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">zone4</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#ID"/>
-        <NamedIndividual IRI="#zone5"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">18364962-7390-4b22-9dab-22283a01dbc3</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#Name"/>
-        <NamedIndividual IRI="#zone5"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">zone5</Literal>
-    </DataPropertyAssertion>
     <InverseObjectProperties>
         <ObjectProperty IRI="#FuncitonOf"/>
         <ObjectProperty IRI="#hasFunction"/>
@@ -450,6 +363,5 @@
 
 
 
-<!-- Generated by the OWL API (version 5.1.3.2017-11-04T21:44:22Z) https://github.com/owlcs/owlapi/ -->
-
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
 
